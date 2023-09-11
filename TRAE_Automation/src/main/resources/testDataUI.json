@@ -1,0 +1,8 @@
+{
+  "minIdOfProj": 100,
+  "maxIdOfProj": 1000,
+  "minCountOfSteps": 1,
+  "nameOfProduct": "Example Name",
+  "nameOfClient": "Valera",
+  "comment": "My Comment, HI!!"
+}

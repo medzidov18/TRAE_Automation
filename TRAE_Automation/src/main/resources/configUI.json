@@ -1,0 +1,11 @@
+{
+  "remoteAllowGC": "--remote-allow-origins=*",
+  "useIncognitoGC": "--incognito",
+  "removeImagesGC": "--blink-settings=imagesEnabled=false",
+  "implicitWaitDuration": 30,
+  "explicitWaitDuration": 20,
+  "baseUri": "http://195.80.51.155:3000",
+  "loginAdmin": "admin",
+  "passwordAdmin": "TopSec",
+  "valueAttribute": "value"
+}
