@@ -1,14 +1,20 @@
 package selenium.core;
 
-import Framework.core.DriverUtility;
+import core.ConnectDatabase;
+import core.DriverUtility;
 import lombok.SneakyThrows;
 import org.testng.annotations.*;
 
+import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
 import static dataread.DataRead.configUiDTO;
 
 public abstract class BaseTest {
+    @BeforeTest
+    public void initializeSqlConnection() {
+        ConnectDatabase.initialize();
+    }
     @BeforeMethod (alwaysRun = true)
     public void initialize() {
         DriverUtility.Initialize();
@@ -19,6 +25,11 @@ public abstract class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        DriverUtility.getDriver().quit();
+        DriverUtility.quitBrowser();
+    }
+
+    @AfterTest
+    public void closeSqlTest() throws SQLException {
+        ConnectDatabase.getConnection().close();
     }
 }

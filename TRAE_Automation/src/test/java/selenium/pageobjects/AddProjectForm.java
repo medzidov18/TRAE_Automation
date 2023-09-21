@@ -1,8 +1,10 @@
 package selenium.pageobjects;
 
 import base.BaseForm;
+import core.DriverUtility;
 import elements.*;
 import org.openqa.selenium.By;
+import utility.RandomUtility;
 
 import java.util.Calendar;
 
@@ -17,7 +19,7 @@ public class AddProjectForm extends BaseForm {
     private final Button dateOfProjectEndingInputEmpty = new Button(By.xpath("//span[text()='Выберите дату' and contains(@class, 'mantine-DatePickerInput-placeholder')] "), "Date of end of the Project Empty");
     private final Button dateOfProjectEndingInputFilled = new Button(By.xpath("//button[contains(@class, 'mantine-DatePickerInput-input') and contains(@class, ' mantine-DatePickerInput-input')]"), "Date of end of the Project Filled");
     private final Button stepsOfProjectInput = new Button(By.xpath("//div[@aria-haspopup='menu']"), "Steps Of Project");
-    private final Button submitFormButton = new Button(By.xpath("//button[@type='submit']//span[text()='Сохранить']"), "Submit Form Button");
+    private final Button submitFormButton = new Button(By.xpath("//button[@type='submit']//span[text()='Сохранить']/parent::*"), "Submit Form Button");
 
     private final CalendarForm calendarForm = new CalendarForm();
     private final StepsForm stepsForm = new StepsForm();
@@ -32,32 +34,32 @@ public class AddProjectForm extends BaseForm {
 
     public boolean isConfirmationWindowDisplayed(Integer numberOfProject) {
         Label confirmationButton = new Label(By.xpath(String.format("//section[contains(@class, 'mantine-Paper-root') and contains(@class, 'mantine-Modal-content')]//p[contains(text(), '%s')]", numberOfProject.toString())), "Confirmation Window");
-        Framework.core.DriverUtility.getWaits().waitForDisplayed(confirmationButton.getElement());
+        DriverUtility.getWaits().waitForDisplayed(confirmationButton.getElement());
         return confirmationButton.getElement().isDisplayed();
     }
 
     public void clickOnSubmit() {
-        submitFormButton.clickElement();
+        submitFormButton.clickElementExecutor();
     }
 
     public void clickOnEmptyPlace() {
-        new Label(By.xpath("//form/div[contains(@class, 'mantine-Group-root mantine-1fb9963')]"), "Empty Place").clickElement();
+        new Label(By.xpath("//form/div[contains(@class, 'mantine-Group-root')]"), "Empty Place").clickElementExecutor();
     }
 
     public void inputNumberOfProject(Integer number) {
         numberOfProjectInput.getElement().sendKeys(String.valueOf(number));
     }
 
-    public void inputNameOfProduct(String name) {
-        nameOfProductInput.getElement().sendKeys(name);
+    public void inputNameOfProduct() {
+        nameOfProductInput.getElement().sendKeys(RandomUtility.getRandomAlphaNumericString());
     }
 
-    public void inputNameOfClient(String name) {
-        clientOfProjectInput.getElement().sendKeys(name);
+    public void inputNameOfClient() {
+        clientOfProjectInput.getElement().sendKeys(RandomUtility.getRandomAlphaNumericString());
     }
 
-    public void inputComments(String comment) {
-        commentsInput.getElement().sendKeys(comment);
+    public void inputComments() {
+        commentsInput.getElement().sendKeys(RandomUtility.getRandomAlphaNumericString());
     }
 
     public void selectDataAfterMonth() {

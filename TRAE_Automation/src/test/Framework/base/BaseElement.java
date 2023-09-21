@@ -1,11 +1,13 @@
 package base;
 
-import Framework.core.DriverUtility;
+import core.DriverUtility;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import core.LoggerUtility;
+
+import static java.sql.DriverManager.getDriver;
 
 public abstract class BaseElement {
     protected By uniqueLocator;
@@ -29,6 +31,13 @@ public abstract class BaseElement {
         Thread.sleep(100);
         DriverUtility.getWaits().waitForToBeClickable(uniqueLocator);
         getElement().click();
+    }
+
+    @SneakyThrows
+    public void clickElementExecutor() {
+        DriverUtility.getJavaScriptExecutor().executeScript("arguments[0].scrollIntoView(true);", this.getElement());
+        LoggerUtility.info("Clicking to: " + elementName);
+        DriverUtility.getJavaScriptExecutor().executeScript("arguments[0].click();", this.getElement());
     }
 
     public void scrollToElement() {

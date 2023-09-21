@@ -1,4 +1,4 @@
-package Framework.core;
+package core;
 
 import lombok.Getter;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,36 +8,34 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.interactions.Actions;
 import core.LoggerUtility;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.ConditionalWait;
+
+import java.time.Duration;
 
 import static dataread.DataRead.configUiDTO;
 
 public class DriverUtility {
     @Getter
-    private static WebDriver driver;
-    private static ConditionalWait waits;
-    private static Actions actions;
-    private static WebStorage storage;
-    private static JavascriptExecutor executor;
+    private static WebDriver driver = null;
+    @Getter
+    private static ConditionalWait waits = null;
+    @Getter
+    private static Actions actions = null;
+    private static WebStorage storage = null;
+    private static JavascriptExecutor executor = null;
     private static LoggerUtility log = new LoggerUtility();
+    @Getter
+    private static WebDriverWait explicitWait = null;
 
     private DriverUtility() {
     }
 
-    public static ConditionalWait getWaits() {
-        return new ConditionalWait();
-    }
-
-    public static Actions getActions() {
-        return new Actions(getDriver());
-    }
-
     public static JavascriptExecutor getJavaScriptExecutor() {
-        return (JavascriptExecutor) driver;
+        return executor;
     }
 
     public static void clearLocalStorage() {
-        storage = (WebStorage) getDriver();
         storage.getLocalStorage().clear();
         storage.getSessionStorage().clear();
     }
@@ -50,14 +48,23 @@ public class DriverUtility {
         chromeOptions.addArguments(configUiDTO.getRemoteAllowGC());
 
         driver = new ChromeDriver(chromeOptions);
+        waits = new ConditionalWait();
+        actions = new Actions(driver);
+        executor = (JavascriptExecutor) driver;
+        storage = (WebStorage) driver;
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(configUiDTO.getExplicitWaitDuration()));
     }
 
     public static void quitBrowser() {
         if (driver != null) {
             log.info("Quitting the browser...");
-            getDriver().close();
             getDriver().quit();
         }
         driver = null;
+        actions = null;
+        storage = null;
+        waits = null;
+        executor = null;
+        explicitWait = null;
     }
 }

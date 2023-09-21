@@ -1,6 +1,7 @@
 package selenium.pageobjects;
 
 import base.BaseForm;
+import core.DriverUtility;
 import elements.*;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
@@ -26,7 +27,7 @@ public class ProjectsPageObject extends BaseForm {
     }
 
     public void clickOnAddNewButton() {
-        addNewProjectButton.getElement().click();
+        addNewProjectButton.clickElement();
     }
 
     @SneakyThrows
@@ -37,13 +38,15 @@ public class ProjectsPageObject extends BaseForm {
         for (Integer i = 1; i < countOfPages; i++) {
             if (!isRightProject) {
                 Thread.sleep(100);
-                List<WebElement> allProjects = Framework.core.DriverUtility.getDriver().findElements(By.xpath("(//div/p[1])[position() <= 10]"));
+                List<WebElement> allProjects = DriverUtility.getDriver().findElements(By.xpath("(//div/p[1])[position() <= 10]"));
+
                 for (WebElement project : allProjects) {
                     isRightProject = project.getText().equals(numberOfProject.toString());
                     if (isRightProject) break;
                 }
             }
             if (isRightProject) break;
+
             goToNextPage();
             Thread.sleep(100);
         }
@@ -52,8 +55,7 @@ public class ProjectsPageObject extends BaseForm {
     }
 
     public void goToNextPage() {
-        Framework.core.DriverUtility.getJavaScriptExecutor().executeScript("arguments[0].scrollIntoView(true);", nextPagePagination.getElement());
-        Framework.core.DriverUtility.getJavaScriptExecutor().executeScript("arguments[0].click();", nextPagePagination.getElement());
+        nextPagePagination.clickElementExecutor();
     }
 
     public String getCountOfPages() {

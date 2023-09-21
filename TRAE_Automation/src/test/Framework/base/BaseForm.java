@@ -1,6 +1,6 @@
 package base;
 
-import Framework.core.DriverUtility;
+import core.DriverUtility;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;

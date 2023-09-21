@@ -1,7 +1,7 @@
 package selenium.pageobjects;
 
-import Framework.core.DriverUtility;
 import base.BaseForm;
+import core.DriverUtility;
 import elements.*;
 import org.openqa.selenium.By;
 
@@ -18,8 +18,8 @@ public class StepsForm extends BaseForm {
 
     public void selectRandomStep() {
         Integer randomstep = random.nextInt(getcountOfAllSteps() - testDataUiDTO.getMinCountOfSteps() + 1) + testDataUiDTO.getMinCountOfSteps();
-        Button stepButton = new Button(By.xpath(String.format("(//button[@role='menuitem']//span[contains(@class, 'knOJek')])[%s]", randomstep)), "Random Step");
-        DriverUtility.getActions().moveToElement(stepButton.getElement()).click().build().perform();
+        Button stepButton = new Button(By.xpath(String.format("(//button[@role='menuitem']//span[1])[%s]", randomstep)), "Random Step");
+        stepButton.clickElementExecutor();
     }
 
     private Integer getcountOfAllSteps() {

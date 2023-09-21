@@ -1,10 +1,14 @@
 package tests.steps.projects;
 
+import api.requests.ProjectsRequests;
+import dataread.StatusCodes;
+import io.restassured.response.Response;
 import lombok.SneakyThrows;
 import org.testng.Assert;
 import selenium.pageobjects.AddProjectForm;
 import selenium.pageobjects.HeaderForm;
 import selenium.pageobjects.ProjectsPageObject;
+import sql.commands.ProjectCommands;
 
 import java.util.Random;
 
@@ -27,9 +31,9 @@ public class AddProjectsTestSteps {
     public Integer insertAllDataToAddProject() {
         Integer randomNumberOfProject = random.nextInt(testDataUiDTO.getMaxIdOfProj()-testDataUiDTO.getMinIdOfProj()) + testDataUiDTO.getMinIdOfProj();
         addProjectForm.inputNumberOfProject(randomNumberOfProject);
-        addProjectForm.inputNameOfProduct(testDataUiDTO.getNameOfProduct());
-        addProjectForm.inputNameOfClient(testDataUiDTO.getNameOfClient());
-        addProjectForm.inputComments(testDataUiDTO.getComment());
+        addProjectForm.inputNameOfProduct();
+        addProjectForm.inputNameOfClient();
+        addProjectForm.inputComments();
         addProjectForm.selectDataAfterMonth();
         addProjectForm.selectRandomStep();
         addProjectForm.clickOnEmptyPlace();
@@ -44,6 +48,10 @@ public class AddProjectsTestSteps {
     public void goToProjects() {
         headerForm.goToProjects();
         headerForm.goToProjects();
+    }
+
+    public Response deleteProject(Integer idOfProject) {
+        return ProjectsRequests.deleteProject(ProjectCommands.getProjectIdFromOperationNumber(idOfProject));
     }
 
     public void assertThatAddProjectFormDisplayed() {
@@ -65,5 +73,9 @@ public class AddProjectsTestSteps {
 
     public void assertThatProjectAdded(Integer randomProjectNumber) {
         Assert.assertTrue(projectsPageObject.findProjectByNumber(randomProjectNumber), "Cant find project");
+    }
+
+    public void assertThatProjectDeleted(Response deleteProjectResponse) {
+        Assert.assertEquals(deleteProjectResponse.getStatusCode(), StatusCodes.OK_204.getValue(), "Status code is not 204");
     }
 }

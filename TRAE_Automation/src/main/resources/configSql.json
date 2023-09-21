@@ -1,0 +1,5 @@
+{
+  "connectionString": "jdbc:postgresql://195.80.51.155:5436/TraeDB",
+  "userName": "trae_user",
+  "userPassword": "super_secret_pa$$word"
+}

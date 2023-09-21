@@ -1,6 +1,7 @@
 package tests.steps;
 
-import Framework.core.DriverUtility;
+import api.models.LoginModel;
+import api.requests.AuthRequests;
 import lombok.SneakyThrows;
 import selenium.pageobjects.LoginPageObject;
 

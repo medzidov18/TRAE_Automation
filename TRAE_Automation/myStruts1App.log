@@ -1,19 +1,44 @@
-2023-09-11 15:04:24 INFO  LoggerUtility:37 - Creating Chrome browser...
-2023-09-11 15:04:27 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
-2023-09-11 15:04:28 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Scrolling to: Date of end of the Project Empty
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Clicking to: Date of end of the Project Empty
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Scrolling to: Next Month Button
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Clicking to: Next Month Button
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Scrolling to: Day Of month
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Clicking to: Day Of month
-2023-09-11 15:04:29 INFO  LoggerUtility:37 - Scrolling to: Steps Of Project
-2023-09-11 15:04:30 INFO  LoggerUtility:37 - Clicking to: Steps Of Project
-2023-09-11 15:04:30 INFO  LoggerUtility:37 - Scrolling to: Empty Place
-2023-09-11 15:04:30 INFO  LoggerUtility:37 - Clicking to: Empty Place
-2023-09-11 15:04:30 INFO  LoggerUtility:37 - Scrolling to: Submit Form Button
-2023-09-11 15:04:30 INFO  LoggerUtility:37 - Clicking to: Submit Form Button
-2023-09-11 15:04:31 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
-2023-09-11 15:04:31 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
-2023-09-11 15:04:32 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
-2023-09-11 15:04:32 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:30:56 INFO  LoggerUtility:37 - Creating Chrome browser...
+2023-09-21 10:30:59 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
+2023-09-21 10:31:01 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:31:02 INFO  LoggerUtility:37 - Scrolling to: Add Project Button
+2023-09-21 10:31:02 INFO  LoggerUtility:37 - Clicking to: Add Project Button
+2023-09-21 10:31:03 INFO  LoggerUtility:37 - Scrolling to: Date of end of the Project Empty
+2023-09-21 10:31:03 INFO  LoggerUtility:37 - Clicking to: Date of end of the Project Empty
+2023-09-21 10:31:03 INFO  LoggerUtility:37 - Scrolling to: Next Month Button
+2023-09-21 10:31:03 INFO  LoggerUtility:37 - Clicking to: Next Month Button
+2023-09-21 10:31:03 INFO  LoggerUtility:37 - Scrolling to: Day Of month
+2023-09-21 10:31:03 INFO  LoggerUtility:37 - Clicking to: Day Of month
+2023-09-21 10:31:04 INFO  LoggerUtility:37 - Scrolling to: Steps Of Project
+2023-09-21 10:31:04 INFO  LoggerUtility:37 - Clicking to: Steps Of Project
+2023-09-21 10:31:04 INFO  LoggerUtility:37 - Clicking to: Random Step
+2023-09-21 10:31:04 INFO  LoggerUtility:37 - Clicking to: Empty Place
+2023-09-21 10:31:04 INFO  LoggerUtility:37 - Clicking to: Submit Form Button
+2023-09-21 10:31:05 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
+2023-09-21 10:31:05 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:31:06 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
+2023-09-21 10:31:06 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:31:06 INFO  LoggerUtility:37 - Clicking to: Next Page Button
+2023-09-21 10:31:06 INFO  LoggerUtility:37 - Quitting the browser...
+2023-09-21 10:31:07 INFO  LoggerUtility:37 - Creating Chrome browser...
+2023-09-21 10:31:08 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
+2023-09-21 10:31:09 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:31:09 INFO  LoggerUtility:37 - Scrolling to: Add Project Button
+2023-09-21 10:31:09 INFO  LoggerUtility:37 - Clicking to: Add Project Button
+2023-09-21 10:31:10 INFO  LoggerUtility:37 - Scrolling to: Date of end of the Project Empty
+2023-09-21 10:31:10 INFO  LoggerUtility:37 - Clicking to: Date of end of the Project Empty
+2023-09-21 10:31:10 INFO  LoggerUtility:37 - Scrolling to: Next Month Button
+2023-09-21 10:31:10 INFO  LoggerUtility:37 - Clicking to: Next Month Button
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Scrolling to: Day Of month
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Clicking to: Day Of month
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Scrolling to: Steps Of Project
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Clicking to: Steps Of Project
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Clicking to: Random Step
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Clicking to: Empty Place
+2023-09-21 10:31:11 INFO  LoggerUtility:37 - Clicking to: Submit Form Button
+2023-09-21 10:31:12 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
+2023-09-21 10:31:12 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:31:12 INFO  LoggerUtility:37 - Scrolling to: Project Button In Header
+2023-09-21 10:31:12 INFO  LoggerUtility:37 - Clicking to: Project Button In Header
+2023-09-21 10:31:12 INFO  LoggerUtility:37 - Clicking to: Next Page Button
+2023-09-21 10:31:13 INFO  LoggerUtility:37 - Quitting the browser...
